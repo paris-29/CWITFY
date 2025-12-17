@@ -5,189 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CWITFY Resources</title>
     <link rel="icon" href="favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;700&family=Pixelify+Sans:wght@400;700&family=Jersey+10:wght@400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-blue: #3498db;
-            --primary-yellow: #f1c40f;
-            --bg-color: #f5f5f5;
-            --text-color: #333;
-            --header-bg: var(--primary-blue);
-            --section-bg: #fff;
-            --border-color: #ecf0f1;
-        }
-        [data-theme="dark"] {
-            --bg-color: #1a1a1a;
-            --text-color: #e0e0e0;
-            --header-bg: #2c3e50;
-            --section-bg: #2c2c2c;
-            --border-color: #444;
-        }
-        body {
-            font-family: 'Onest', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        header {
-            background-color: var(--header-bg);
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 1rem;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            font-family: 'Jersey 10', sans-serif;
-            color: var(--primary-yellow);
-        }
-        header p {
-            margin: 0.5rem 0 0;
-            font-size: 1.1rem;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        .search-container {
-            text-align: center;
-            margin: 2rem 0;
-        }
-        #search {
-            padding: 0.75rem 1rem;
-            width: 100%;
-            max-width: 400px;
-            font-size: 1rem;
-            border: 2px solid #bdc3c7;
-            border-radius: 6px;
-            outline: none;
-        }
-        #search:focus {
-            border-color: var(--primary-blue);
-        }
-        .section {
-            margin: 3rem 0;
-            background-color: var(--section-bg);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: background-color 0.3s;
-        }
-        .section h2 {
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            color: var(--primary-blue);
-            font-size: 1.8rem;
-            border-bottom: 2px solid var(--primary-yellow);
-            padding-bottom: 0.5rem;
-        }
-        .resources {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-        .resource-item {
-            background-color: var(--primary-blue);
-            color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary-blue);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            cursor: pointer;
-        }
-        .resource-item:hover {
-            background-color: var(--primary-yellow);
-            color: var(--primary-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
-        }
-        .resource-item a {
-            text-decoration: none;
-            color: inherit;
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: block;
-        }
-        .recent-list {
-            list-style: none;
-            padding: 0;
-        }
-        .recent-item {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: border-color 0.3s;
-        }
-        .recent-item:last-child {
-            border-bottom: none;
-        }
-        .recent-item a {
-            text-decoration: none;
-            color: var(--primary-blue);
-            font-weight: 500;
-        }
-        .recent-item .date {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-        }
-        footer {
-            background-color: var(--primary-blue);
-            color: #fff;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 3rem;
-        }
-        footer a {
-            color: var(--primary-yellow);
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        .dark-mode-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background-color: var(--primary-yellow);
-            color: var(--primary-blue);
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-        .dark-mode-btn:hover {
-            transform: scale(1.1);
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            .resources {
-                grid-template-columns: 1fr;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
     <header>
@@ -195,12 +13,34 @@
             <img src="favicon.png" alt="CWITFY Logo" style="height: 50px; margin-right: 10px;">
             <h1>CWITFY Resources</h1>
         </div>
-        <p>Your resource hub for FY-SEM2</p>
-        <button class="dark-mode-btn" id="darkModeBtn">🌙</button>
+        <button class="dark-mode-btn" id="darkModeBtn"><i data-lucide="moon"></i></button>
     </header>
     <div class="container">
         <div class="search-container">
             <input type="text" id="search" placeholder="Search resources...">
+        </div>
+        <div class="section">
+            <h2>Categories</h2>
+            <div class="resources">
+                <div class="resource-item">
+                    <a href="Notes/">
+                        <i data-lucide="book-open"></i>
+                        <br>Notes
+                    </a>
+                </div>
+                <div class="resource-item">
+                    <a href="Resources/">
+                        <i data-lucide="folder"></i>
+                        <br>Resources
+                    </a>
+                </div>
+                <div class="resource-item">
+                    <a href="Syllabus/">
+                        <i data-lucide="file-text"></i>
+                        <br>Syllabus
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="section">
             <h2>Recently Updated</h2>
@@ -208,51 +48,112 @@
                 <li class="recent-item">
                     <a href="Resources/FY-Sem2-IOTA-Linux/Linux-installation-fyiot-sem2.pdf">Linux Practical 1 - Installation - Images</a>
                     <span class="date">Updated on 17/12/25</span>
+                </li>
+            </ul>
         </div>
         <div class="section">
             <h2>All Resources</h2>
-            <div class="resources" id="resourceList">
-                <div class="resource-item" data-name="FY Sem2 Linux (IOT)">
-                    <a href="Resources/FY-Sem2-IOTA-Linux/">FY-Sem2-Linux (IOT)</a>
-                </div>
-                <div class="resource-item" data-name="FY SEM2 IOT PIC">
-                    <a href="Resources/FY-SEM2-PIC (IOT)/">FY SEM 2 IOT - PIC</a>
-                </div>
-                <div class="resource-item" data-name="FY SEM2 IOT BEEE">
-                    <a href="Resources/FY-SEM2-IOT-BEEE /">FY SEM2 IOT BEEE</a>
-                </div>
-                <div class="resource-item" data-name="FY Sem2 IOT A.Maths">
-                    <a href="Resources/FY-SEM2-IOT-A.Maths/">FY SEM2 IOT A.Maths</a>
-                </div>
-            </div>
+            <div class="resources">
+                  <div class="resource-item">
+                      <a href="Resources/FY-Sem2-IOTA-Linux/">FY-Sem2-Linux (IOT)</a>
+                  </div>
+                  <div class="resource-item">
+                      <a href="Resources/FY-SEM2-PIC (IOT)/">FY SEM 2 IOT - PIC</a>
+                  </div>
+                  <div class="resource-item">
+                      <a href="Resources/FY-SEM2-IOT-BEEE /">FY SEM2 IOT BEEE</a>
+                  </div>
+                  <div class="resource-item">
+                      <a href="Resources/FY-SEM2-IOT-A.Maths/">FY SEM2 IOT A.Maths</a>
+                  </div>
+             </div>
+        </div>
+        <div class="section">
+            <h2>All Notes</h2>
+            <div class="resources">
+                  <div class="resource-item">
+                      <a href="Notes/FY-Sem2-IOTA-Linux/">FY-Sem2-Linux (IOT)</a>
+                  </div>
+                  <div class="resource-item">
+                      <a href="Notes/FY-SEM2-PIC (IOT)/">FY SEM 2 IOT - PIC</a>
+                  </div>
+                  <div class="resource-item">
+                      <a href="Notes/FY-SEM2-IOT-BEEE /">FY SEM2 IOT BEEE</a>
+                  </div>
+                  <div class="resource-item">
+                      <a href="Notes/FY-SEM2-IOT-A.Maths/">FY SEM2 IOT A.Maths</a>
+                  </div>
+             </div>
+        </div>
+        <div class="section">
+            <h2>All Syllabus</h2>
+            <div class="resources">
+                  <div class="resource-item">
+                      <a href="Syllabus/FY-Sem2-IOTA-Linux/">FY-Sem2-Linux (IOT)</a>
+                  </div>
+                  <div class="resource-item">
+                      <a href="Syllabus/FY-SEM2-PIC (IOT)/">FY SEM 2 IOT - PIC</a>
+                  </div>
+                  <div class="resource-item">
+                      <a href="Syllabus/FY-SEM2-IOT-BEEE /">FY SEM2 IOT BEEE</a>
+                  </div>
+                  <div class="resource-item">
+                      <a href="Syllabus/FY-SEM2-IOT-A.Maths/">FY SEM2 IOT A.Maths</a>
+                  </div>
+             </div>
         </div>
     </div>
     <footer>
         <p>&copy; 2023 CWITFY. <a href="https://github.com/paris-29/CWITFY/">🐙 GitHub</a></p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.js"></script>
     <script>
         const searchInput = document.getElementById('search');
-        const resourceList = document.getElementById('resourceList');
-        const items = resourceList.getElementsByClassName('resource-item');
+        const recentList = document.getElementById('recentList');
+        const recentItems = recentList.getElementsByClassName('recent-item');
+        const allResourceItems = document.querySelectorAll('.resources .resource-item');
         const darkModeBtn = document.getElementById('darkModeBtn');
+        const themeIcon = document.querySelector('#darkModeBtn i');
         const body = document.body;
 
         // Check for saved theme preference or default to light mode
         const currentTheme = localStorage.getItem('theme') || 'light';
         body.setAttribute('data-theme', currentTheme);
-        darkModeBtn.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        if (typeof lucide !== 'undefined') {
+            themeIcon.setAttribute('data-lucide', currentTheme === 'dark' ? 'sun' : 'moon');
+            lucide.createIcons();
+        } else {
+            themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        }
 
         darkModeBtn.addEventListener('click', () => {
             const theme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             body.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
-            darkModeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+            if (typeof lucide !== 'undefined') {
+                themeIcon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
+                lucide.createIcons();
+            } else {
+                themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
         });
 
         searchInput.addEventListener('input', function() {
             const query = this.value.toLowerCase();
-            for (let item of items) {
-                const name = item.getAttribute('data-name').toLowerCase();
+
+            // Filter all resource items in all sections
+            for (let item of allResourceItems) {
+                const name = item.querySelector('a').textContent.toLowerCase();
+                if (name.includes(query)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+
+            // Filter recent items
+            for (let item of recentItems) {
+                const name = item.querySelector('a').textContent.toLowerCase();
                 if (name.includes(query)) {
                     item.style.display = '';
                 } else {

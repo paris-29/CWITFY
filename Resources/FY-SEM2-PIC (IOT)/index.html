@@ -4,175 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FY-SEM2-PIC (IOT) Directory</title>
-    <style>
-        :root {
-            --primary-blue: #3498db;
-            --primary-yellow: #f1c40f;
-            --bg-color: #f5f5f5;
-            --text-color: #333;
-            --header-bg: var(--primary-blue);
-            --section-bg: #fff;
-            --border-color: #ecf0f1;
-        }
-        [data-theme="dark"] {
-            --bg-color: #1a1a1a;
-            --text-color: #e0e0e0;
-            --header-bg: #2c3e50;
-            --section-bg: #2c2c2c;
-            --border-color: #444;
-        }
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        header {
-            background-color: var(--header-bg);
-            color: #fff;
-            text-align: center;
-            padding: 2rem 1rem;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            margin: 0.5rem 0 0;
-            font-size: 1.1rem;
-        }
-        .dark-mode-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background-color: var(--primary-yellow);
-            color: var(--primary-blue);
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-        .dark-mode-btn:hover {
-            transform: scale(1.1);
-        }
-        .nav-links {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            display: flex;
-            gap: 0.5rem;
-        }
-        .nav-links a {
-            background-color: var(--primary-yellow);
-            color: var(--primary-blue);
-            padding: 0.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
-        }
-        .nav-links a:hover {
-            background-color: #fff;
-            transform: translateY(-2px);
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        .section {
-            background-color: var(--section-bg);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: background-color 0.3s;
-        }
-        .section h2 {
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            color: var(--primary-blue);
-            font-size: 1.8rem;
-            border-bottom: 2px solid var(--primary-yellow);
-            padding-bottom: 0.5rem;
-        }
-        .resource-list {
-            list-style: none;
-            padding: 0;
-        }
-        .resource-item {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .resource-item:last-child {
-            border-bottom: none;
-        }
-        .resource-item a {
-            text-decoration: none;
-            color: var(--primary-blue);
-            font-weight: 500;
-            font-size: 1.1rem;
-        }
-        .resource-item a:hover {
-            color: var(--primary-yellow);
-        }
-        .coming-soon {
-            text-align: center;
-            color: #7f8c8d;
-            font-style: italic;
-            padding: 2rem;
-        }
-
-        footer {
-            background-color: var(--primary-blue);
-            color: #fff;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 3rem;
-        }
-        footer a {
-            color: var(--primary-yellow);
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-            .nav-links {
-                top: 2rem;
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../../Styles.css">
 </head>
 <body>
     <header>
         <div class="nav-links">
-            <a href="../../" title="Home">🏠</a>
-            <a href="../" title="Resources">⬅️</a>
+            <a href="../../" title="Home"><i data-lucide="home"></i></a>
+            <a href="../" title="Resources"><i data-lucide="arrow-left"></i></a>
         </div>
         <h1>FY-SEM2-PIC (IOT)</h1>
-        <p>PIC Microcontroller and IoT Resources</p>
-        <button class="dark-mode-btn" id="darkModeBtn">🌙</button>
+        <button class="dark-mode-btn" id="darkModeBtn"><i data-lucide="moon"></i></button>
     </header>
     <div class="container">
         <div class="section">
@@ -186,20 +27,24 @@
     <footer>
         <p>&copy; 2025 CWITFY. <a href="https://github.com/paris-29/CWITFY/">🐙 GitHub</a></p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.js"></script>
     <script>
         const darkModeBtn = document.getElementById('darkModeBtn');
+        const themeIcon = document.querySelector('#darkModeBtn i');
         const body = document.body;
 
         // Check for saved theme preference or default to light mode
         const currentTheme = localStorage.getItem('theme') || 'light';
         body.setAttribute('data-theme', currentTheme);
-        darkModeBtn.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        themeIcon.setAttribute('data-lucide', currentTheme === 'dark' ? 'sun' : 'moon');
+        lucide.createIcons();
 
         darkModeBtn.addEventListener('click', () => {
             const theme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             body.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
-            darkModeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+            themeIcon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
+            lucide.createIcons();
         });
     </script>
 </body>
