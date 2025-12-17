@@ -5,17 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FY-SEM2-IOT-A.Maths Directory</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        ul { list-style-type: none; }
-        li { margin: 10px 0; }
-        a { text-decoration: none; color: #007bff; }
-        a:hover { text-decoration: underline; }
+        :root {
+            --primary-blue: #3498db;
+            --primary-yellow: #f1c40f;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary-blue);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+        }
+        .nav-links {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        .nav-links a {
+            background-color: var(--primary-yellow);
+            color: var(--primary-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .nav-links a:hover {
+            background-color: #fff;
+            transform: translateY(-2px);
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .section {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-yellow);
+            padding-bottom: 0.5rem;
+        }
+        .resource-list {
+            list-style: none;
+            padding: 0;
+        }
+        .resource-item {
+            padding: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .resource-item:last-child {
+            border-bottom: none;
+        }
+        .resource-item a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        .resource-item a:hover {
+            color: var(--primary-yellow);
+        }
+        .coming-soon {
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+            padding: 2rem;
+        }
+        footer {
+            background-color: var(--primary-blue);
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>FY-SEM2-IOT-A.Maths</h1>
-    <p>Resources will be added soon.</p>
-    <p><a href="../">Back to Resources</a></p>
+    <header>
+        <div class="nav-links">
+            <a href="../../">← Home</a>
+            <a href="../">← Resources</a>
+        </div>
+        <h1>FY-SEM2-IOT-A.Maths</h1>
+        <p>Applied Mathematics Resources</p>
+    </header>
+    <div class="container">
+        <div class="section">
+            <h2>Available Resources</h2>
+            <div class="coming-soon">
+                <p>📚 Resources will be added soon.</p>
+                <p>Check back later for lecture notes, assignments, and study materials.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 CWITFY. All rights reserved.</p>
+    </footer>
 </body>
 </html></content>
 </xai:function_call name="write">
