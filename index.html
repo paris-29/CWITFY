@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CWITFY Resources</title>
+    <style>
+        :root {
+            --primary-blue: #3498db;
+            --primary-yellow: #f1c40f;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--primary-blue);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .search-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        #search {
+            padding: 0.75rem 1rem;
+            width: 100%;
+            max-width: 400px;
+            font-size: 1rem;
+            border: 2px solid #bdc3c7;
+            border-radius: 6px;
+            outline: none;
+        }
+        #search:focus {
+            border-color: var(--primary-blue);
+        }
+        .section {
+            margin: 3rem 0;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-yellow);
+            padding-bottom: 0.5rem;
+        }
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .resource-item {
+            background-color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+            transition: background-color 0.3s;
+            border: 2px solid transparent;
+        }
+        .resource-item:hover {
+            background-color: var(--primary-yellow);
+            border-color: var(--primary-blue);
+        }
+        .resource-item a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .recent-list {
+            list-style: none;
+            padding: 0;
+        }
+        .recent-item {
+            padding: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .recent-item:last-child {
+            border-bottom: none;
+        }
+        .recent-item a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+        .recent-item .date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        footer {
+            background-color: var(--primary-blue);
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .resources {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CWITFY Resources</h1>
+        <p>Your resource hub for FY-SEM2</p>
+    </header>
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search resources...">
+        </div>
+        <div class="section">
+            <h2>Recently Updated</h2>
+            <ul class="recent-list">
+                <li class="recent-item">
+                    <a href="Resources/FY-Sem2-Linux/">New Linux tutorial added</a>
+                    <span class="date">Updated 2 days ago</span>
+                </li>
+                <li class="recent-item">
+                    <a href="Resources/-PIC/">PIC microcontroller guide updated</a>
+                    <span class="date">Updated 1 week ago</span>
+                </li>
+                <li class="recent-item">
+                    <a href="Resources/BEEE/">BEEE notes revised</a>
+                    <span class="date">Updated 3 days ago</span>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>All Resources</h2>
+            <div class="resources" id="resourceList">
+                <div class="resource-item" data-name="FY-Sem2-Linux">
+                    <a href="Resources/FY-Sem2-Linux/">FY-Sem2-Linux</a>
+                </div>
+                <div class="resource-item" data-name="-PIC">
+                    <a href="Resources/-PIC/">-PIC</a>
+                </div>
+                <div class="resource-item" data-name="BEEE">
+                    <a href="Resources/BEEE/">BEEE</a>
+                </div>
+                <div class="resource-item" data-name="A.Maths">
+                    <a href="Resources/A.Maths/">A.Maths</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 CWITFY. All rights reserved.</p>
+    </footer>
+    <script>
+        const searchInput = document.getElementById('search');
+        const resourceList = document.getElementById('resourceList');
+        const items = resourceList.getElementsByClassName('resource-item');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            for (let item of items) {
+                const name = item.getAttribute('data-name').toLowerCase();
+                if (name.includes(query)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
