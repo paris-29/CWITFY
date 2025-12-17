@@ -73,22 +73,28 @@
             gap: 1.5rem;
         }
         .resource-item {
-            background-color: #ecf0f1;
+            background-color: var(--primary-blue);
+            color: #fff;
             padding: 1.5rem;
-            border-radius: 6px;
+            border-radius: 8px;
             text-align: center;
-            transition: background-color 0.3s;
-            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-blue);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
         }
         .resource-item:hover {
             background-color: var(--primary-yellow);
-            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
         }
         .resource-item a {
             text-decoration: none;
-            color: #2c3e50;
+            color: inherit;
             font-weight: 600;
             font-size: 1.1rem;
+            display: block;
         }
         .recent-list {
             list-style: none;
