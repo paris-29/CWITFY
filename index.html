@@ -6,6 +6,8 @@
     <title>CWITFY Resources</title>
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" href="Styles.css">
+    <!-- Load Lucide once in the head -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <header>
@@ -13,7 +15,7 @@
             <img src="favicon.png" alt="CWITFY Logo" style="height: 50px; margin-right: 10px;">
             <h1>CWITFY Resources</h1>
         </div>
-        <button class="dark-mode-btn" id="darkModeBtn"><i data-lucide="moon"></i></button>
+       
     </header>
     <div class="container">
         <div class="search-container">
@@ -44,10 +46,14 @@
         </div>
         <div class="section">
             <h2>Recently Updated</h2>
-            <ul class="recent-list">
+            <ul class="recent-list" id="recentList">
                 <li class="recent-item">
                     <a href="Resources/FY-Sem2-IOTA-Linux/Linux-installation-fyiot-sem2.pdf">Linux Practical 1 - Installation - Images</a>
-                    <span class="date">Updated on 17/12/25</span>
+                    <span class="date">Updated on 17/12/25-6:23pm IST</span>
+                </li>
+		<li class="recent-item">
+                    <a href="Resources/FY-Sem2-IOTA-Linux/Linux-installation-fyiot-sem2.pdf">Programming in C- Notes - Images</a>
+                    <span class="date">Updated on 17/12/25-10:12pm IST</span>
                 </li>
             </ul>
         </div>
@@ -106,60 +112,59 @@
     <footer>
         <p>&copy; 2023 CWITFY. <a href="https://github.com/paris-29/CWITFY/">🐙 GitHub</a></p>
     </footer>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js/dist/umd/lucide.js"></script>
     <script>
-        const searchInput = document.getElementById('search');
-        const recentList = document.getElementById('recentList');
-        const recentItems = recentList.getElementsByClassName('recent-item');
-        const allResourceItems = document.querySelectorAll('.resources .resource-item');
-        const darkModeBtn = document.getElementById('darkModeBtn');
-        const themeIcon = document.querySelector('#darkModeBtn i');
-        const body = document.body;
-
-        // Check for saved theme preference or default to light mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        body.setAttribute('data-theme', currentTheme);
-        if (typeof lucide !== 'undefined') {
-            themeIcon.setAttribute('data-lucide', currentTheme === 'dark' ? 'sun' : 'moon');
+        // Initialize Lucide icons once when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create all Lucide icons
             lucide.createIcons();
-        } else {
-            themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-        }
+            
+            const searchInput = document.getElementById('search');
+            const recentList = document.getElementById('recentList');
+            const recentItems = recentList.getElementsByClassName('recent-item');
+            const allResourceItems = document.querySelectorAll('.resources .resource-item');
+            const darkModeBtn = document.getElementById('darkModeBtn');
+            const themeIcon = document.querySelector('#darkModeBtn i');
+            const body = document.body;
 
-        darkModeBtn.addEventListener('click', () => {
-            const theme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-            if (typeof lucide !== 'undefined') {
+            // Check for saved theme preference or default to light mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            body.setAttribute('data-theme', currentTheme);
+            themeIcon.setAttribute('data-lucide', currentTheme === 'dark' ? 'sun' : 'moon');
+            
+            // Recreate icons after setting the initial theme
+            lucide.createIcons();
+
+            darkModeBtn.addEventListener('click', () => {
+                const theme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                body.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
                 themeIcon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
-                lucide.createIcons();
-            } else {
-                themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-            }
-        });
+                lucide.createIcons(); // Recreate icons after theme change
+            });
 
-        searchInput.addEventListener('input', function() {
-            const query = this.value.toLowerCase();
+            searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase();
 
-            // Filter all resource items in all sections
-            for (let item of allResourceItems) {
-                const name = item.querySelector('a').textContent.toLowerCase();
-                if (name.includes(query)) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
+                // Filter all resource items in all sections
+                for (let item of allResourceItems) {
+                    const name = item.querySelector('a').textContent.toLowerCase();
+                    if (name.includes(query)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
                 }
-            }
 
-            // Filter recent items
-            for (let item of recentItems) {
-                const name = item.querySelector('a').textContent.toLowerCase();
-                if (name.includes(query)) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
+                // Filter recent items
+                for (let item of recentItems) {
+                    const name = item.querySelector('a').textContent.toLowerCase();
+                    if (name.includes(query)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
                 }
-            }
+            });
         });
     </script>
 </body>
