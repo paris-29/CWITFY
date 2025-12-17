@@ -76,6 +76,11 @@ header p {
     justify-content: center;
 }
 
+.nav-links a i, .nav-links a svg {
+    width: 20px;
+    height: 20px;
+}
+
 .nav-links a:hover {
     background-color: #fff;
     transform: translateY(-2px);
@@ -95,6 +100,12 @@ header p {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.back-home i, .back-home svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
 }
 
 .back-home:hover {
@@ -182,8 +193,9 @@ header p {
     display: block;
 }
 
-.resource-item a i {
-    font-size: 2rem;
+.resource-item a i, .resource-item a svg {
+    width: 48px;
+    height: 48px;
     margin-bottom: 0.5rem;
 }
 
@@ -262,8 +274,9 @@ header p {
     color: var(--primary-yellow);
 }
 
-.file-icon {
-    font-size: 1.5rem;
+.file-icon, .file-icon svg {
+    width: 24px;
+    height: 24px;
 }
 
 .file-info {
@@ -326,6 +339,11 @@ footer a:hover {
     z-index: 1000;
 }
 
+.dark-mode-btn i, .dark-mode-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
 .dark-mode-btn:hover {
     transform: scale(1.1);
 }
@@ -337,6 +355,11 @@ footer a:hover {
     left: 1rem;
     top: auto;
     right: auto;
+}
+
+.dark-mode-btn.fixed i, .dark-mode-btn.fixed svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* Media Queries */
