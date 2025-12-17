@@ -45,6 +45,25 @@
             margin: 0.5rem 0 0;
             font-size: 1.1rem;
         }
+        .dark-mode-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary-yellow);
+            color: var(--primary-blue);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .dark-mode-btn:hover {
+            transform: scale(1.1);
+        }
         .nav-links {
             position: absolute;
             top: 1rem;
@@ -133,25 +152,7 @@
             color: #7f8c8d;
             margin-top: 0.25rem;
         }
-        .dark-mode-btn {
-            position: fixed;
-            bottom: 1rem;
-            left: 1rem;
-            background-color: var(--primary-yellow);
-            color: var(--primary-blue);
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-        .dark-mode-btn:hover {
-            transform: scale(1.1);
-        }
+
         footer {
             background-color: var(--primary-blue);
             color: #fff;
@@ -194,6 +195,7 @@
         </div>
         <h1>FY-Sem2-IOTA-Linux</h1>
         <p>Linux and IoT Resources</p>
+        <button class="dark-mode-btn" id="darkModeBtn">🌙</button>
     </header>
     <div class="container">
         <div class="section">
@@ -212,9 +214,8 @@
             </ul>
         </div>
     </div>
-    <button class="dark-mode-btn" id="darkModeBtn">🌙</button>
     <footer>
-        <p>&copy; 2025 CWITFY. <a href="https://github.com/paris-29/CWITFY/">GitHub</a></p>
+        <p>&copy; 2025 CWITFY. <a href="https://github.com/paris-29/CWITFY/">🐙 GitHub</a></p>
     </footer>
     <script>
         const darkModeBtn = document.getElementById('darkModeBtn');
