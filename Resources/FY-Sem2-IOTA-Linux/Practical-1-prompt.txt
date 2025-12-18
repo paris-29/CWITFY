@@ -1,8 +1,9 @@
 Hey! Based On our previous chats in context of my KNOWLEDGE LEVEL About Computers and considering i am a Begginer and also this resource "https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview" 
 
-Write a Step by step Guide to install Linux Operating System ( ubuntu desktop ) Detailed steps and But with low Writing , 
+Write a Step by step Guide to install Linux Operating System ( ubuntu desktop ) Detailed steps and But with mid Writing context, 
 
 note : institue name : Cusrow wadia institue of Technology 
        Subject : Linux Basics 
+       there should be paras to explain the step taken 
        and there should be approx 13 or more steps resembling 24 images in that resource
 Linux installation Practical - 1 ( basic linux ) FY IoT 
