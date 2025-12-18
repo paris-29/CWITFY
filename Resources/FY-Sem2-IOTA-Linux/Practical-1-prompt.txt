@@ -1,4 +1,4 @@
-Hey! Based On our previous chats and this resource "https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview" 
+Hey! Based On our previous chats in context of my KNOWLEDGE LEVEL About Computers and considering i am a Begginer and also this resource "https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview" 
 
 Write a Step by step Guide to install Linux Operating System ( ubuntu desktop ) Detailed steps and But with low Writing , 
 
