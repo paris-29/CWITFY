@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources Directory</title>
-    <link rel="stylesheet" href="../Styles.css">
+    <title>P Batch - FY-SEM2-WD Directory</title>
+    <link rel="stylesheet" href="../../../../Styles.css">
 </head>
 <body>
     <header>
-        <h1>Resources</h1>
+        <h1>P Batch - FY-SEM2-WD</h1>
         <button class="dark-mode-btn" id="darkModeBtn"><i data-lucide="moon"></i></button>
     </header>
     <nav class="nav-section">
         <div class="nav-buttons">
-            <a href="../" class="back-home">← Back to Home</a>
+            <a href="../../../" title="Home"><i data-lucide="home"></i></a>
+            <a href="../../" title="Subject"><i data-lucide="arrow-left"></i></a>
         </div>
     </nav>
     <div class="container">
@@ -21,29 +22,11 @@
             <input type="text" id="search" placeholder="Search resources...">
         </div>
         <div class="section">
-            <h2>All Resources</h2>
-             <div class="resources" id="resourceList">
-                 <!-- Sample item - copy and modify:
-                 <div class="resource-item" data-name="Subject Name">
-                     <a href="Subject-Folder/">Subject Display Name</a>
-                 </div>
-                 -->
-                 <div class="resource-item" data-name="FY Sem2 Linux (IOT)">
-                     <a href="FY-Sem2-IOTA-Linux/">FY-Sem2-Linux (IOT)</a>
-                 </div>
-                 <div class="resource-item" data-name="FY SEM2 IOT PIC">
-                     <a href="FY-SEM2-PIC (IOT)/">FY SEM 2 IOT - PIC</a>
-                 </div>
-                 <div class="resource-item" data-name="FY SEM2 IOT BEEE">
-                     <a href="FY-SEM2-IOT-BEEE /">FY SEM2 IOT BEEE</a>
-                 </div>
-                 <div class="resource-item" data-name="FY Sem2 IOT A.Maths">
-                     <a href="FY-SEM2-IOT-A.Maths/">FY SEM2 IOT A.Maths</a>
-                 </div>
-		<div class="resource-item" data-name="FY-SEM2-WD">
-			<a href="FY-SEM2-WD/">FY SEM2 Web Design</a>
-		</div>
-             </div>
+            <h2>Available Resources</h2>
+            <div class="coming-soon">
+                <p>📚 Resources will be added soon.</p>
+                <p>Check back later for practical materials and assignments.</p>
+            </div>
         </div>
     </div>
     <footer>
@@ -51,9 +34,6 @@
     </footer>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script>
-        const searchInput = document.getElementById('search');
-        const resourceList = document.getElementById('resourceList');
-        const items = resourceList.getElementsByClassName('resource-item');
         const darkModeBtn = document.getElementById('darkModeBtn');
         const themeIcon = document.querySelector('#darkModeBtn i');
         const body = document.body;
@@ -72,10 +52,14 @@
             lucide.createIcons();
         });
 
+        const searchInput = document.getElementById('search');
+        const resourceList = document.querySelector('.resource-list');
+        const items = resourceList ? resourceList.getElementsByClassName('resource-item') : [];
+
         searchInput.addEventListener('input', function() {
             const query = this.value.toLowerCase();
             for (let item of items) {
-                const name = item.getAttribute('data-name').toLowerCase();
+                const name = item.querySelector('a').textContent.toLowerCase();
                 if (name.includes(query)) {
                     item.style.display = '';
                 } else {
@@ -85,6 +69,4 @@
         });
     </script>
 </body>
-</html></content>
-</xai:function_call name="write">
-<parameter name="filePath">Resources/FY-Sem2-IOTA-Linux/index.html
+</html>
