@@ -3,55 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRACTICAL - FY-Sem2-IOTA-Linux Directory</title>
-    <link rel="stylesheet" href="../../../Styles.css">
+    <title>Practicals - FY-Sem2-IOTA-Linux Directory</title>
+    <link rel="stylesheet" href="../../../../Styles.css">
 </head>
 <body>
     <header>
-        <h1>PRACTICAL - FY-Sem2-IOTA-Linux</h1>
+        <h1>Practicals - FY-Sem2-IOTA-Linux</h1>
         <button class="dark-mode-btn" id="darkModeBtn"><i data-lucide="moon"></i></button>
     </header>
     <nav class="nav-section">
         <div class="nav-buttons">
-            <a href="../../../" title="Home"><i data-lucide="home"></i></a>
-            <a href="../" title="Subject"><i data-lucide="arrow-left"></i></a>
+            <a href="../../" title="Home"><i data-lucide="home"></i></a>
+            <a href="../" title="Resources"><i data-lucide="arrow-left"></i></a>
         </div>
     </nav>
     <div class="container">
         <div class="search-container">
-            <input type="text" id="search" placeholder="Search batches...">
+            <input type="text" id="search" placeholder="Search practicals...">
         </div>
         <div class="section">
-            <h2>Available Batches</h2>
-             <div class="resource-item" data-name="P Batch">
-                 <a href="P batch/">
-                     <i data-lucide="folder" class="file-icon"></i>
-                     <div class="file-info">
-                         <span class="file-name">P Batch</span>
-                         <span class="file-desc">Practical resources for P Batch</span>
-                     </div>
-                 </a>
-             </div>
-             <br>
-             <div class="resource-item" data-name="Q Batch">
-                 <a href="Q batch/">
-                     <i data-lucide="folder" class="file-icon"></i>
-                     <div class="file-info">
-                         <span class="file-name">Q Batch</span>
-                         <span class="file-desc">Practical resources for Q Batch</span>
-                     </div>
-                 </a>
-             </div>
-             <br>
-             <div class="resource-item" data-name="R Batch">
-                 <a href="R batch/">
-                     <i data-lucide="folder" class="file-icon"></i>
-                     <div class="file-info">
-                         <span class="file-name">R Batch</span>
-                         <span class="file-desc">Practical resources for R Batch</span>
-                     </div>
-                 </a>
-             </div>
+            <h2>Available Practicals</h2>
+            <div class="resource-list">
+              <div class="resource-item" data-name="Practical 1">
+                  <a href="Practical 1/">
+                      <i data-lucide="folder" class="file-icon"></i>
+                      <div class="file-info">
+                          <span class="file-name">Practical 1</span>
+                          <span class="file-desc">Practical resources for Practical 1</span>
+                      </div>
+                  </a>
+              </div>
+              <br>
+              <div class="resource-item" data-name="Practical 2">
+                  <a href="Practical 2/">
+                      <i data-lucide="folder" class="file-icon"></i>
+                      <div class="file-info">
+                          <span class="file-name">Practical 2</span>
+                          <span class="file-desc">Practical resources for Practical 2</span>
+                      </div>
+                  </a>
+              </div>
+            </div>
         </div>
     </div>
     <footer>
@@ -59,6 +51,10 @@
     </footer>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script>
+        const searchInput = document.getElementById('search');
+        const resourceList = document.querySelector('.resource-list');
+        const items = resourceList.getElementsByClassName('resource-item');
+
         const darkModeBtn = document.getElementById('darkModeBtn');
         const themeIcon = document.querySelector('#darkModeBtn i');
         const body = document.body;
@@ -77,13 +73,10 @@
             lucide.createIcons();
         });
 
-        const searchInput = document.getElementById('search');
-        const items = document.getElementsByClassName('resource-item');
-
         searchInput.addEventListener('input', function() {
             const query = this.value.toLowerCase();
             for (let item of items) {
-                const name = item.getAttribute('data-name').toLowerCase();
+                const name = item.querySelector('a').textContent.toLowerCase();
                 if (name.includes(query)) {
                     item.style.display = '';
                 } else {
@@ -93,4 +86,6 @@
         });
     </script>
 </body>
-</html>
+</html></content>
+</xai:function_call name="write">
+<parameter name="filePath">Resources/FY-SEM2-PIC (IOT)/index.html
